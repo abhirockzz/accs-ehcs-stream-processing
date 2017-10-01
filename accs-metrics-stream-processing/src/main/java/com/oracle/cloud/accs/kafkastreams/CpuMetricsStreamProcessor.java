@@ -26,7 +26,7 @@ public class CpuMetricsStreamProcessor implements Processor<String, String> {
         config.setMaxWaitMillis(5000);
         config.setMaxTotal(15);
         //redis = new Jedis(redisHost, Integer.valueOf(redisPort), 10000);
-        pool = new JedisPool(config, redisHost, Integer.valueOf(redisPort), 60000 ,"M@y@2016");
+        pool = new JedisPool(config, redisHost, Integer.valueOf(redisPort), 60000);
         redis = pool.getResource();
 
         System.out.println("Connected to Redis " + redis);
