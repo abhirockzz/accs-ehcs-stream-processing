@@ -33,8 +33,7 @@ public class PooledJedisProducer {
         String redisHost = System.getenv().getOrDefault("REDIS_HOST", "192.168.99.100");
         String redisPort = System.getenv().getOrDefault("REDIS_PORT", "6379");
         
-        pool = new JedisPool(config, redisHost, Integer.valueOf(redisPort), 60000 ,"M@y@2016");
-        //pool = new JedisPool(config, redisHost, Integer.valueOf(redisPort), 60000);
+        pool = new JedisPool(config, redisHost, Integer.valueOf(redisPort), 60000);
         System.out.println("Jedis Pool initialized");
     }
     
