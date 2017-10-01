@@ -1,0 +1,9 @@
+{
+  "memory": "2G",
+  "instances": 1,
+  "environment": {
+    "REDIS_HOST": "<update as per your environment>",
+    "REDIS_PORT": "6379",
+	"REDIS_METRICS_SORTED_SET": "cpu-leaderboard"
+  }
+}

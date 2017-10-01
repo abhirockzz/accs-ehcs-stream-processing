@@ -1,0 +1,8 @@
+{
+  "services": [
+    {
+      "name": "cpu-metrics",
+      "type": "OEHCS"
+    }
+  ]
+}

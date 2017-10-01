@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<table id="table-cpu" summary="CPU Utilization" aria-label="CPU Utilization Table" style=' font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+       font-weight: bold;
+       font-size: 15.6;'
+       data-bind="ojComponent: {component: 'ojTable', 
+                                data: cpuDatasource, 
+                                columnsDefault: {sortable: 'none'}, 
+                                selectionMode: {row: 'single' },
+                                optionChange : changeSelection,
+                                columns: [{headerText: 'Machine #', 
+                                           field: 'name'},
+                                          {headerText: 'CPU Utilization', 
+                                           field: 'score',
+                                       template : 'gauge_template'}]}">
+</table>
+
+
+<script type="text/html" id="gauge_template">
+    <td>
+        <div data-bind="ojComponent: {
+             component: 'ojStatusMeterGauge', 
+             min: 0, 
+             max: 100, 
+             thresholds: $parent.thresholdValues,
+             value: score, 
+             orientation: 'circular',
+             metricLabel: {rendered: 'on'},
+             plotArea: {rendered: 'on'},
+             readOnly: true
+             }" 
+             style=
+             "align:center;
+             margin-top:1px;
+             margin-bottom:1px;
+             height:50px;
+             width: 60% ;
+             ">
+        </div>
+    </td>
+</script>
