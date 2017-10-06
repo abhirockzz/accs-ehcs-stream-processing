@@ -1,4 +1,4 @@
-Monitoring application using Apache Kafka, Kafka Streams and Redis
+Monitoring application using Apache Kafka, Kafka Streams, Redis, Oracle JET and JavaEE
 
 ## Projects
 
